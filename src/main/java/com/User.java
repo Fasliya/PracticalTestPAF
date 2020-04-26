@@ -38,7 +38,7 @@ public class User {
             }
 
             // Prepare the html table to be displayed
-            output = "<table border=1 padding=10><tr style=\"text-align:center;\"><th>User ID</th> <th>First Name</th ><th >Last Name</th > " + "<th>Age</th><th>Gender</th><th>Email</th><th>Address</th><th>Phone Number</th><th>Username</th><th>Password</th><th>Update</th ><th>Remove</th></tr>";
+            output = "<table border=1 padding=10><tr style=\"text-align:center;\"><th>User ID</th><th>First Name</th><th>Last Name</th>" + "<th>Age</th><th>Gender</th><th>Email</th><th>Address</th><th>Phone Number</th><th>Username</th><th>Password</th><th>Update</th ><th>Remove</th></tr>";
 
             String query = "select * from user";
             Statement stmt = con.createStatement();
@@ -162,13 +162,13 @@ public class User {
             // binding values
             preparedStmt.setString(1, firstName);
             preparedStmt.setString(2, lastName);
-            preparedStmt.setInt(4, Integer.parseInt(age));
-            preparedStmt.setString(3, gender);
-            preparedStmt.setString(3, email);
-            preparedStmt.setString(5, address);
-            preparedStmt.setString(6, phoneNumber);
-            preparedStmt.setString(7, username);
-            preparedStmt.setString(7, password);
+            preparedStmt.setInt(3, Integer.parseInt(age));
+            preparedStmt.setString(4, gender);
+            preparedStmt.setString(5, email);
+            preparedStmt.setString(6, address);
+            preparedStmt.setString(7, phoneNumber);
+            preparedStmt.setString(8, username);
+            preparedStmt.setString(9, password);
             preparedStmt.setInt(10, Integer.parseInt(ID));
 
             // execute the statement
