@@ -38,7 +38,7 @@ public class User {
             }
 
             // Prepare the html table to be displayed
-            output = "<table border=1 padding=10><tr style=\"text-align:center;\"><th>User ID</th> <th>Hospital Name</th ><th >Address</th > " + "<th>Phone Number</th><th>Username of the Hospital</th><th>Password of the Hospital</th><th>Charges for an Appointment</th><th>Update</th ><th>Remove</th></tr> ";
+            output = "<table border=1 padding=10><tr style=\"text-align:center;\"><th>User ID</th> <th>First Name</th ><th >Last Name</th > " + "<th>Age</th><th>Gender</th><th>Email</th><th>Address</th><th>Phone Number</th><th>Username</th><th>Password</th><th>Update</th ><th>Remove</th></tr>";
 
             String query = "select * from user";
             Statement stmt = con.createStatement();
@@ -91,7 +91,7 @@ public class User {
 
     }
 
-    public String insertUser(String hospitalName, String hospitalAddress, String hospitalPhone, String hospitalUsername, String hospitalPassword, String appointmentCharge) {
+    public String insertUser(String firstName, String lastName, String age, String gender, String email, String address, String phoneNumber, String username, String password) {
 
         String output = "";
 
@@ -106,30 +106,32 @@ public class User {
             }
 
             // create a prepared statement
-            String query = "insert into hospital(hospitalID, hospitalName, hospitalAddress, hospitalPhone, hospitalUsername, hospitalPassword, appointmentCharge)" + " values (?, ?, ?, ?, ?, ?, ?)";
+            String query = "insert into user(userID, firstName, lastName, age, gender, email, address, phoneNumber, username, password)" + " values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             PreparedStatement preparedStmt = con.prepareStatement(query);
 
             // binding values
             preparedStmt.setInt(1, 0);
-            preparedStmt.setString(2, hospitalName);
-            preparedStmt.setString(3, hospitalAddress);
-            preparedStmt.setString(4, hospitalPhone);
-            preparedStmt.setString(5, hospitalUsername);
-            preparedStmt.setString(6, hospitalPassword);
-            preparedStmt.setDouble(7, Double.parseDouble(appointmentCharge));
-
+            preparedStmt.setString(2, firstName);
+            preparedStmt.setString(3, lastName);
+            preparedStmt.setInt(4, Integer.parseInt(age));
+            preparedStmt.setString(5, gender);
+            preparedStmt.setString(6, email);
+            preparedStmt.setString(7, address);
+            preparedStmt.setString(8, phoneNumber);
+            preparedStmt.setString(9, username);
+            preparedStmt.setString(10, password);
 
             // execute the statement
             preparedStmt.execute();
             con.close();
 
-            String newHospitals = readHospitals();
+            String newUsers = readUsers();
 
-            output = "{\"status\":\"success\", \"data\": \"" + newHospitals + "\"}";
+            output = "{\"status\":\"success\", \"data\": \"" + newUsers + "\"}";
 
         } catch (Exception e) {
 
-            output = "{\"status\":\"error\", \"data\":\"Error while inserting the hospital.\"}";
+            output = "{\"status\":\"error\", \"data\":\"Error while inserting the user.\"}";
             System.err.println(e.getMessage());
 
         }
@@ -138,7 +140,7 @@ public class User {
 
     }
 
-    public String updateHospital(String ID, String hospitalName, String hospitalAddress, String hospitalPhone, String hospitalUsername, String hospitalPassword, String appointmentCharge) {
+    public String updateUser(String ID, String firstName, String lastName, String age, String gender, String email, String address, String phoneNumber, String username, String password) {
 
         String output = "";
 
@@ -153,29 +155,32 @@ public class User {
             }
 
             // create a prepared statement
-            String query = "UPDATE hospital SET hospitalName = ?, hospitalAddress = ?, hospitalPhone = ?, hospitalUsername = ?, hospitalPassword = ?, appointmentCharge = ? WHERE hospitalID = ?";
+            String query = "UPDATE user SET firstName = ?, lastName = ?, age = ?, gender = ?, email = ?, address = ?, phoneNumber = ?, username = ?, password = ? WHERE userID = ?";
 
             PreparedStatement preparedStmt = con.prepareStatement(query);
 
             // binding values
-            preparedStmt.setString(1, hospitalName);
-            preparedStmt.setString(2, hospitalAddress);
-            preparedStmt.setString(3, hospitalPhone);
-            preparedStmt.setString(4, hospitalUsername);
-            preparedStmt.setString(5, hospitalPassword);
-            preparedStmt.setDouble(6, Double.parseDouble(appointmentCharge));
-            preparedStmt.setInt(7, Integer.parseInt(ID));
+            preparedStmt.setString(1, firstName);
+            preparedStmt.setString(2, lastName);
+            preparedStmt.setInt(4, Integer.parseInt(age));
+            preparedStmt.setString(3, gender);
+            preparedStmt.setString(3, email);
+            preparedStmt.setString(5, address);
+            preparedStmt.setString(6, phoneNumber);
+            preparedStmt.setString(7, username);
+            preparedStmt.setString(7, password);
+            preparedStmt.setInt(10, Integer.parseInt(ID));
 
             // execute the statement
             preparedStmt.execute();
             con.close();
 
-            String newHospitals = readHospitals();
-            output = "{\"status\":\"success\", \"data\": \"" + newHospitals + "\"}";
+            String newUsers = readUsers();
+            output = "{\"status\":\"success\", \"data\": \"" + newUsers + "\"}";
 
         } catch (Exception e) {
 
-            output = "{\"status\":\"error\", \"data\":\"Error while updating the hospital.\"}";
+            output = "{\"status\":\"error\", \"data\":\"Error while updating the user.\"}";
             System.err.println(e.getMessage());
 
         }
@@ -184,7 +189,7 @@ public class User {
 
     }
 
-    public String deleteHospital(String hospitalID) {
+    public String deleteUser(String userID) {
 
         String output = "";
 
@@ -199,22 +204,22 @@ public class User {
             }
 
             // create a prepared statement
-            String query = "delete from hospital where hospitalID = ?";
+            String query = "delete from user where userID = ?";
             PreparedStatement preparedStmt = con.prepareStatement(query);
 
             // binding values
-            preparedStmt.setInt(1, Integer.parseInt(hospitalID));
+            preparedStmt.setInt(1, Integer.parseInt(userID));
 
             // execute the statement
             preparedStmt.execute();
             con.close();
 
-            String newHospitals = readHospitals();
-            output = "{\"status\":\"success\", \"data\": \"" + newHospitals + "\"}";
+            String newUsers = readUsers();
+            output = "{\"status\":\"success\", \"data\": \"" + newUsers + "\"}";
 
         } catch (Exception e) {
 
-            output = "{\"status\":\"error\", \"data\":\"Error while deleting the hospital.\"}";
+            output = "{\"status\":\"error\", \"data\":\"Error while deleting the user.\"}";
             System.err.println(e.getMessage());
 
         }
