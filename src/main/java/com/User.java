@@ -82,7 +82,7 @@ public class User {
 
         } catch (Exception e) {
 
-            output = "Error while reading the hospitals.";
+            output = "Error while reading the users.";
             System.err.println(e.getMessage());
 
         }
