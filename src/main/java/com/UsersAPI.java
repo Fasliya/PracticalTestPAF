@@ -27,6 +27,7 @@ public class UsersAPI extends HttpServlet {
 
         String output = userObj.insertUser(
 
+                request.getParameter("userID"),
                 request.getParameter("firstName"),
                 request.getParameter("lastName"),
                 request.getParameter("age"),
@@ -36,6 +37,7 @@ public class UsersAPI extends HttpServlet {
                 request.getParameter("phoneNumber"),
                 request.getParameter("username"),
                 request.getParameter("password")
+
 
         );
 
@@ -49,7 +51,6 @@ public class UsersAPI extends HttpServlet {
         Map<String, String> map = new HashMap<String, String>();
 
         try {
-
             Scanner scanner = new Scanner(request.getInputStream(), "UTF-8");
             String queryString = scanner.hasNext() ? scanner.useDelimiter("\\A").next() : "";
             scanner.close();

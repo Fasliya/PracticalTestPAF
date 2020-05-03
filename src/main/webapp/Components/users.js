@@ -77,7 +77,7 @@ function onUserSaveComplete(response, status) {
 // Update
 $(document).on("click", ".btnUpdate", function(event)
 {
-    $("#hidUserIDSave").val($(this).closest("tr").find('#hidUserIDSave').val());
+    $("#hidUserIDSave").val($(this).closest("tr").find('#hidUserIDUpdate').val());
     $("#firstName").val($(this).closest("tr").find('td:eq(1)').text());
     $("#lastName").val($(this).closest("tr").find('td:eq(2)').text());
     $("#age").val($(this).closest("tr").find('td:eq(3)').text());
@@ -96,7 +96,7 @@ $(document).on("click", ".btnRemove", function(event)
         {
             url : "UsersAPI",
             type : "DELETE",
-            data : "UserID=" + $(this).data("userid"),
+            data : "userID=" + $(this).data("userid"),
             dataType : "text",
             complete : function(response, status)
             {
@@ -141,18 +141,15 @@ function onUserDeleteComplete(response, status) {
 // Client Model
 function validateUserForm() {
 
-    // firstName
-    if ($("#firstName").val().trim() == "") {
-
-        return "Insert First Name";
-
+    // FIRST NAME
+    if ($("#firstName").val().trim() == "")
+    {
+        return "Insert First Name.";
     }
-
-    // lastName
-    if ($("#lastName").val().trim() == "") {
-
+    // LAST NAME
+    if ($("#lastName").val().trim() == "")
+    {
         return "Insert Last Name.";
-
     }
 
     // AGE-------------------------------
@@ -166,49 +163,36 @@ function validateUserForm() {
     {
         return "Insert a numerical value for Age.";
     }
-
-    // gender
-    if ($("#gender").val().trim() == "") {
-
+    // GENDER------------------------
+    if ($("#gender").val().trim() == "")
+    {
         return "Insert Gender.";
-
     }
-
-    // email
-    if ($("#email").val().trim() == "") {
-
+    // EMAIL------------------------
+    if ($("#email").val().trim() == "")
+    {
         return "Insert Email Address.";
-
     }
-
-    // address
-    if ($("#address").val().trim() == "") {
-
-        return "Insert Address";
-
+    // ADDRESS------------------------
+    if ($("#address").val().trim() == "")
+    {
+        return "Insert Address.";
     }
-
-    // phoneNumber
-    if ($("#phoneNumber").val().trim() == "") {
-
+    // PHONE NUMBER------------------------
+    if ($("#phoneNumber").val().trim() == "")
+    {
         return "Insert Phone Number.";
-
     }
-
-    // username
-    if ($("#username").val().trim() == "") {
-
-        return "Insert a Username.";
-
+    // USERNAME------------------------
+    if ($("#username").val().trim() == "")
+    {
+        return "Insert Username.";
     }
-
-    // password
-    if ($("#password").val().trim() == "") {
-
-        return "Insert a Password.";
-
+    // PASSWORD------------------------
+    if ($("#password").val().trim() == "")
+    {
+        return "Insert Password.";
     }
 
     return true;
-
 }
