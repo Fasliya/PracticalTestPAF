@@ -155,11 +155,16 @@ function validateUserForm() {
 
     }
 
-    // age
-    if ($("#age").val().trim() == "") {
-
+    // AGE-------------------------------
+    if ($("#age").val().trim() == "")
+    {
         return "Insert Age.";
-
+    }
+    // is numerical value
+    var tmpAge = $("#age").val().trim();
+    if (!$.isNumeric(tmpAge))
+    {
+        return "Insert a numerical value for Age.";
     }
 
     // gender
