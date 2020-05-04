@@ -82,7 +82,7 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label class="bmd-label-floating">First Name</label>
+                                                <label class="bmd-label-floating">Enter First Name</label>
                                                 <input id="firstName" name="firstName" type="text" class="form-control">
                                             </div>
                                         </div>
@@ -91,7 +91,7 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label class="bmd-label-floating">Last Name</label>
+                                                <label class="bmd-label-floating">Enter Last Name</label>
                                                 <input id="lastName" name="lastName" type="text" class="form-control">
                                             </div>
                                         </div>
@@ -99,7 +99,7 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label class="bmd-label-floating">Age</label>
+                                                <label class="bmd-label-floating">Enter Age</label>
                                                 <input id="age" name="age" type="number" class="form-control">
                                             </div>
                                         </div>
@@ -108,7 +108,7 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label class="bmd-label-floating">Gender</label>
+                                                <label class="bmd-label-floating">Enter Gender</label>
                                                 <input id="gender" name="gender" type="text" class="form-control">
                                             </div>
                                         </div>
@@ -117,7 +117,7 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label class="bmd-label-floating">Email</label>
+                                                <label class="bmd-label-floating">Enter Email</label>
                                                 <input id="email" name="email" type="text" class="form-control">
                                             </div>
                                         </div>
@@ -126,7 +126,7 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label class="bmd-label-floating">Address</label>
+                                                <label class="bmd-label-floating">Enter Address</label>
                                                 <input id="address" name="address" type="text" class="form-control">
                                             </div>
                                         </div>
@@ -135,7 +135,7 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label class="bmd-label-floating">Phone Number</label>
+                                                <label class="bmd-label-floating">Enter Phone Number</label>
                                                 <input id="phoneNumber" name="phoneNumber" type="text"
                                                        class="form-control">
                                             </div>
@@ -145,7 +145,7 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label class="bmd-label-floating">Username</label>
+                                                <label class="bmd-label-floating">Enter Username</label>
                                                 <input id="username" name="username" type="text" class="form-control">
                                             </div>
                                         </div>
@@ -154,7 +154,7 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label class="bmd-label-floating">Password</label>
+                                                <label class="bmd-label-floating">Enter Password</label>
                                                 <input id="password" name="password" type="password"
                                                        class="form-control">
                                             </div>

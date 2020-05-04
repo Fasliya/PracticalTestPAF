@@ -183,6 +183,12 @@ function validateUserForm() {
     {
         return "Insert Phone Number.";
     }
+    // is numerical value
+    var tmpPhone = $("#phoneNumber").val().trim();
+    if (!$.isNumeric(tmpPhone))
+    {
+        return "Insert a Valid Phone Number.";
+    }
     // USERNAME------------------------
     if ($("#username").val().trim() == "")
     {
