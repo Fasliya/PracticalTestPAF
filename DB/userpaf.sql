@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3308
--- Generation Time: May 03, 2020 at 08:16 PM
+-- Generation Time: May 06, 2020 at 03:16 AM
 -- Server version: 5.7.26
 -- PHP Version: 7.2.18
 
@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `username` varchar(200) NOT NULL,
   `password` varchar(200) NOT NULL,
   PRIMARY KEY (`userID`)
-) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `user`
@@ -49,7 +49,10 @@ CREATE TABLE IF NOT EXISTS `user` (
 
 INSERT INTO `user` (`userID`, `firstName`, `lastName`, `age`, `gender`, `email`, `address`, `phoneNumber`, `username`, `password`) VALUES
 (8, 'Aaliya', 'Senanayake', 20, 'female', 'senanayakea@gmail.com', 'Kadawatha Rd, Colombo', '0770060608', 'AaliyaSe', 'aaliya333'),
-(7, 'Samantha', 'Silva', 34, 'male', 'samantha@gmail.com', 'Dambulla Rd, Kurunegala', '0718196610', 'samantha222', 'silva333');
+(7, 'Samantha', 'Silva', 34, 'male', 'samantha@gmail.com', 'Dambulla Rd, Kurunegala', '0718196610', 'samantha222', 'silva333'),
+(15, 'Chamathka', 'vithanage', 35, 'female', 'chamathka@gmail.com', 'Kiribathgoda Colombo', '0776789456', 'cham', 'chamathka333'),
+(16, 'Pasindu', 'Navodya', 22, 'male', 'pasindu2@gmail.com', 'Kirulapana Rd, Colombo', '0772834567', 'pppNav', 'ppp333'),
+(17, 'Deshani', 'Gamage', 44, 'Female', 'deshani@gmail.com', 'Mallawapitiya, Kurunegala', '0770060607', 'desh', 'deshani333');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
